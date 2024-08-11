@@ -1,0 +1,6 @@
+.no-select { user-select: none; }
+
+.draggable { padding: 1em; cursor: grab; }
+.dragging { outline: 1px solid blue; cursor: grabbing; }
+
+.target  { outline: 1px solid red; }

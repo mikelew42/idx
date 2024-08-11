@@ -1,0 +1,35 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.slider-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    touch-action: none;
+}

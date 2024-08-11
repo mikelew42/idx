@@ -1,0 +1,8 @@
+body { padding: 2em; display: flex; }
+
+.sidebar { max-width: 15em; flex-grow: 1; }
+.sidebar a { text-decoration: none; color: black; display: block; padding: 1em 1.2em; cursor: pointer; margin-bottom: 0.25em; background: #eee; }
+.sidebar a:hover {  }
+.sidebar a.active { background: #fff; font-weight: bold; }
+
+.content { background: #fff; flex-grow: 1; max-width: 80em; padding: 6em; }

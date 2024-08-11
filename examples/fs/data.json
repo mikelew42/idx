@@ -1,0 +1,34 @@
+{
+    "smart": {
+        "another": true,
+        "prop": 5
+    },
+    "prop": 123,
+    "smarty": {
+        "prop": 123
+    },
+    "thing": {
+        "sub": {
+            "prop4": 44
+        },
+        "smart": {
+            "prrrrp": 444
+        }
+    },
+    "notes": {
+        "notes": [
+            {
+                "title": "title1",
+                "content": "note1content"
+            },
+            {
+                "title": "titleanother",
+                "content": "thingycontent"
+            },
+            {
+                "title": "and",
+                "content": "anothercontent"
+            }
+        ]
+    }
+}

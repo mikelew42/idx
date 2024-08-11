@@ -1,0 +1,7 @@
+.tabs { display: flex; background: #eee; }
+.tabs .labels { flex-grow: 1; max-width: 200px; padding: 1em; }
+.tabs .label { padding: 0.25em 0.5em; margin-bottom: 5px; background: #dedede; cursor: pointer; }
+.tabs .label.active { background: #fff; }
+.tabs .contents { flex-grow: 1; padding: 1em; }
+.tabs .content { display: none; padding: 2em; background: #fff; }
+.tabs .content.active { display: block; }

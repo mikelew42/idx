@@ -1,0 +1,7 @@
+body { background: #ddd; font-family: Lato; }
+
+
+.array { background: #fff; max-width: 400px; padding: 10px; margin-bottom: 10px; }
+.arrayvalue { display: flex; background: #eee; margin-bottom: 5px; padding: 5px 10px; }
+.arrayvalue .value { flex-grow: 1 }
+.arrayvalue .icon { cursor: pointer; }

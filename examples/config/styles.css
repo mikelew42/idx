@@ -1,0 +1,3 @@
+body { background: #eee; }
+.property { display: flex;  background: white; margin-bottom: 0.5em; }
+.property > .name, .property > .value {  padding: 0.5em 0.75em; width: 50%; }
