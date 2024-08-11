@@ -1,0 +1,35 @@
+{
+	"files": [
+		{
+			"name": "directory.json",
+			"path": "./",
+			"full": "directory.json",
+			"type": "file"
+		},
+		{
+			"name": "index.html",
+			"path": "./",
+			"full": "index.html",
+			"type": "file"
+		},
+		{
+			"name": "index.js",
+			"path": "./",
+			"full": "index.js",
+			"type": "file"
+		},
+		{
+			"name": "server.mjs",
+			"path": "./",
+			"full": "server.mjs",
+			"type": "file"
+		},
+		{
+			"name": "test",
+			"path": "./",
+			"full": "test",
+			"type": "dir",
+			"children": []
+		}
+	]
+}
