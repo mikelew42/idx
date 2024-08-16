@@ -1,6 +1,12 @@
 {
 	"files": [
 		{
+			"name": "class-properties.js",
+			"path": "./",
+			"full": "class-properties.js",
+			"type": "file"
+		},
+		{
 			"name": "directory.json",
 			"path": "./",
 			"full": "directory.json",
@@ -29,7 +35,20 @@
 			"path": "./",
 			"full": "test",
 			"type": "dir",
-			"children": []
+			"children": [
+				{
+					"name": "sub.js",
+					"path": "test",
+					"full": "test/sub.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "test1.js",
+			"path": "./",
+			"full": "test1.js",
+			"type": "file"
 		}
 	]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import Server from "./Server.js";
+import Server from "./server/Server.js";
 
 new Server();

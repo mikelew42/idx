@@ -32,7 +32,7 @@ export default class FSView extends View {
 			},
 			children: div(() => {
 				this.files(fd.children);
-			}).css("display", "none")
+			}).style("display", "none")
 		});
 
 		$dir.bar.name.click(() => {

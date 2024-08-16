@@ -1,4 +1,4 @@
-import EventEmitter from "./module/EventEmitter.js";
+import EventEmitter from "../module/EventEmitter.js";
 
 import fs from "fs";
 import path from "path";

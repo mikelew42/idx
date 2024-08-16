@@ -4,6 +4,9 @@
 .fs > .bar .icon { margin-right: 0.25em; }
 .file { background: rgba(0,0,0,0.1); margin-bottom: 3px; padding: 0.5em 0.5em; display: flex; }
 .file > .icon { margin-right: 0.25em; }
+
+.file-js > .bar, .file-js > .bar > .name { flex-grow: 1; display: flex; }
+.file-js > .bar:hover { cursor: pointer; }
 .dir { background: rgba(0,0,0,0.1); margin-bottom: 3px; }
 .dir > .bar {padding: 0.5em 0.5em;display: flex;cursor: pointer;}
 .dir > .bar > .name { flex-grow: 1; }

@@ -1,0 +1,52 @@
+{
+	"files": [
+		{
+			"name": "directory.json",
+			"path": "./",
+			"full": "directory.json",
+			"type": "file"
+		},
+		{
+			"name": "gl-test.js",
+			"path": "./",
+			"full": "gl-test.js",
+			"type": "file"
+		},
+		{
+			"name": "gpt-webgl.js",
+			"path": "./",
+			"full": "gpt-webgl.js",
+			"type": "file"
+		},
+		{
+			"name": "index.html",
+			"path": "./",
+			"full": "index.html",
+			"type": "file"
+		},
+		{
+			"name": "index.js",
+			"path": "./",
+			"full": "index.js",
+			"type": "file"
+		},
+		{
+			"name": "my-webgl.js",
+			"path": "./",
+			"full": "my-webgl.js",
+			"type": "file"
+		},
+		{
+			"name": "ogl-example.js",
+			"path": "./",
+			"full": "ogl-example.js",
+			"type": "file"
+		},
+		{
+			"name": "server.mjs",
+			"path": "./",
+			"full": "server.mjs",
+			"type": "file"
+		}
+	]
+}

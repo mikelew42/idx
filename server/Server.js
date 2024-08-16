@@ -1,4 +1,4 @@
-import Base from "./module/Base.js";
+import Base from "../module/Base.js";
 
 import express from "express";
 import http from "http";
@@ -46,27 +46,35 @@ export default class Server extends Base {
 
 	initialize(){
 		this.initialize_server();
-		
-		// use server.mjs file to export default { directory: true }
-		if (this.directory){
-			this.initialize_directory();
-		}
-
 		this.listen();
 	}
 
 	initialize_server(){
 		this.webroot = process.cwd();
-		this.express_app = express();
-
-		this.express_app.use(express.static(this.webroot));
-
 		this.dirname = path.dirname(url.fileURLToPath(import.meta.url));
+		this.initialize_express_app();
+		this.initialize_http_server();
+		this.initialize_sockets();
 
-		this.express_app.use("/module", express.static(this.dirname + "/module"));
+		// use server.mjs file to export default { directory: true }
+		if (this.directorize){
+			this.initialize_directorize();
+		}
+	}
 
+	initialize_express_app(){
+		this.express = express;
+		this.express_app = express();
+		this.express_app.use(express.static(this.webroot));
+		this.express_app.use("/module", express.static(this.dirname + "/../module"));
+	}
+
+
+	initialize_http_server(){
 		this.http_server = http.createServer(this.express_app);
+	}
 
+	initialize_sockets(){
 		this.socket_server = new this.constructor.SocketServer({ 
 			http_server: this.http_server,
 			server: this
@@ -79,43 +87,48 @@ export default class Server extends Base {
 		});
 	}
 
-	initialize_directory(){
+	// todo: make this a sub class .directorize
+	initialize_directorize(){
 		this.watcher = chokidar.watch([ 
 			"./",
 			"!**/*.json",
 			"!**/.git", 
-			"!**/node_modules/**" ]);
+			"!**/node_modules/**" ], { ignoreInitial: true });
 		
 		this.watcher.on("add", this.update_directory.bind(this));
 		this.watcher.on("addDir", this.update_directory.bind(this));
 		this.watcher.on("unlink", this.update_directory.bind(this));
 		this.watcher.on("unlinkDir", this.update_directory.bind(this));
+		// this.watcher.on("all", (event, path) => {
+		// 	console.log("all", event, path);
+		// });
 
-		this.update_directory();
+		this.update_directory("initial");
 	}
 
 	update_directory(e){
 		console.log("Rebuilding directory.json", e);
 		fs.writeFileSync("./directory.json", JSON.stringify({ files: this.build_dir("./") }, null, "\t"));
+		this.socket_server.changed(e);
 	}
 
 	build_dir(dir, parent){
 		const data = fs.readdirSync(dir, { withFileTypes: true });
 
-		console.log(dir, data);
+		// console.log(dir, data);
 
 		const result = data.map(file => {
 			const new_file = {};
-			console.log(file);
+			// console.log(file);
 			new_file.name = file.name;
 			new_file.path = file.path.replace(/\\/g, '/');
 			new_file.full = path.join(new_file.path, new_file.name).replace(/\\/g, '/');
 			if (file.isFile()){
-				console.log("it's a file...");
+				// console.log("it's a file...");
 				new_file.type = "file";
 			} else {
 				new_file.type = "dir";
-				console.log("it's a dir...");
+				// console.log("it's a dir...");
 				if (new_file.name !== ".git" && new_file.name !== "node_modules"){
 					new_file.children = this.build_dir(new_file.full);
 				}
@@ -124,7 +137,7 @@ export default class Server extends Base {
 			return new_file;
 		});
 
-		console.log(result);
+		// console.log(result);
 
 		return result;
 	}
