@@ -9,6 +9,7 @@
 .file-js > .bar:hover { cursor: pointer; }
 .dir { background: rgba(0,0,0,0.1); margin-bottom: 3px; }
 .dir > .bar {padding: 0.5em 0.5em;display: flex;cursor: pointer;}
-.dir > .bar > .name { flex-grow: 1; }
+.dir > .bar > .name { flex-grow: 1; display: flex; }
+.dir > .bar > .name  > .icon { margin-left: auto; }
 .dir > .bar > .icon { margin-right: 0.25em; }
 .dir > .children { padding: 0.25em 0.5em; }

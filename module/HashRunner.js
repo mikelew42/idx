@@ -6,6 +6,13 @@ export default class HashRunner extends Base {
 		const directory = await fetch("/directory.json").then(response => response.json());
 		this.files = directory.files;
 
+		// if window.location.path.length > 1 (defaults to "/")
+		// either set files = matching path children, or...
+		// just set this.pathname?
+
+		// how do you keep the script runner working?
+		// it currently, properly, matches /sub/file.js, which is nice
+
 		if (window.location.hash){
 			this.match();
 		} else {
@@ -37,11 +44,14 @@ export default class HashRunner extends Base {
 	}
 
 	search_fd(fd, full){
+		var found;
 		if (fd.full === full){
 			return fd;
 		} else if (fd.children?.length){
 			for (const child of fd.children){
-				return this.search_fd(child, full);
+				if (found = this.search_fd(child, full)){
+					return found;
+				}
 			}
 		}
 		return false;
@@ -63,7 +73,6 @@ export default class HashRunner extends Base {
 			data: this.files,
 			file(fd){
 				if (fd.name.match(/\.js$/)) {
-				    // Code to execute if the file name ends with ".js"
 					div.c("file file-js", {
 						icon: icon("description"),
 						bar: div({

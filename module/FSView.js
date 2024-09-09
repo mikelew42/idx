@@ -27,7 +27,7 @@ export default class FSView extends View {
 		const $dir = div.c("dir", {
 			bar: {
 				folder_icon: icon("folder"), 
-				name: fd.name, 
+				name: div(fd.name, icon("add")), 
 				link_icon: icon("chevron_right")
 			},
 			children: div(() => {

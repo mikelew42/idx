@@ -32,7 +32,7 @@ export default class SocketServer extends EventEmitter {
 			"./",
 			"!**/*.json",
 			"!**/.git", 
-			this.server.dirname + "/module/" ]);
+			this.server.dirname + "/../module/" ]);
 		
 		this.watcher.on("change", this.changed.bind(this));
 

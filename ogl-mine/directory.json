@@ -7,15 +7,9 @@
 			"type": "file"
 		},
 		{
-			"name": "gl-test.js",
+			"name": "gl-base.js",
 			"path": "./",
-			"full": "gl-test.js",
-			"type": "file"
-		},
-		{
-			"name": "gpt-webgl.js",
-			"path": "./",
-			"full": "gpt-webgl.js",
+			"full": "gl-base.js",
 			"type": "file"
 		},
 		{
@@ -31,15 +25,143 @@
 			"type": "file"
 		},
 		{
-			"name": "my-webgl.js",
+			"name": "lessons",
 			"path": "./",
-			"full": "my-webgl.js",
-			"type": "file"
+			"full": "lessons",
+			"type": "dir",
+			"children": [
+				{
+					"name": "no-vao-2-programs.js",
+					"path": "lessons",
+					"full": "lessons/no-vao-2-programs.js",
+					"type": "file"
+				},
+				{
+					"name": "uniform-and-switch-program.js",
+					"path": "lessons",
+					"full": "lessons/uniform-and-switch-program.js",
+					"type": "file"
+				}
+			]
 		},
 		{
-			"name": "ogl-example.js",
+			"name": "mgl",
 			"path": "./",
-			"full": "ogl-example.js",
+			"full": "mgl",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.js",
+					"path": "mgl",
+					"full": "mgl/index.js",
+					"type": "file"
+				},
+				{
+					"name": "Program.js",
+					"path": "mgl",
+					"full": "mgl/Program.js",
+					"type": "file"
+				},
+				{
+					"name": "Scene.js",
+					"path": "mgl",
+					"full": "mgl/Scene.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "ogl",
+			"path": "./",
+			"full": "ogl",
+			"type": "dir",
+			"children": [
+				{
+					"name": "gltf-test.js",
+					"path": "ogl",
+					"full": "ogl/gltf-test.js",
+					"type": "file"
+				},
+				{
+					"name": "high-mesh-count.js",
+					"path": "ogl",
+					"full": "ogl/high-mesh-count.js",
+					"type": "file"
+				},
+				{
+					"name": "ogl-base-struct-test.js",
+					"path": "ogl",
+					"full": "ogl/ogl-base-struct-test.js",
+					"type": "file"
+				},
+				{
+					"name": "ogl-base.js",
+					"path": "ogl",
+					"full": "ogl/ogl-base.js",
+					"type": "file"
+				},
+				{
+					"name": "ogl-example.js",
+					"path": "ogl",
+					"full": "ogl/ogl-example.js",
+					"type": "file"
+				},
+				{
+					"name": "ogl-test.js",
+					"path": "ogl",
+					"full": "ogl/ogl-test.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "old",
+			"path": "./",
+			"full": "old",
+			"type": "dir",
+			"children": [
+				{
+					"name": "gl-test.js",
+					"path": "old",
+					"full": "old/gl-test.js",
+					"type": "file"
+				},
+				{
+					"name": "gpt-multiple-vao.js",
+					"path": "old",
+					"full": "old/gpt-multiple-vao.js",
+					"type": "file"
+				},
+				{
+					"name": "gpt-webgl.js",
+					"path": "old",
+					"full": "old/gpt-webgl.js",
+					"type": "file"
+				},
+				{
+					"name": "jialiang-example.js",
+					"path": "old",
+					"full": "old/jialiang-example.js",
+					"type": "file"
+				},
+				{
+					"name": "jialiang-ubo-tutorial.html",
+					"path": "old",
+					"full": "old/jialiang-ubo-tutorial.html",
+					"type": "file"
+				},
+				{
+					"name": "my-webgl.js",
+					"path": "old",
+					"full": "old/my-webgl.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "quirks.html",
+			"path": "./",
+			"full": "quirks.html",
 			"type": "file"
 		},
 		{

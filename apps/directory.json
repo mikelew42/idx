@@ -1,0 +1,93 @@
+{
+	"files": [
+		{
+			"name": "app1",
+			"path": "./",
+			"full": "app1",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "app1",
+					"full": "app1/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "app1",
+					"full": "app1/index.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "component",
+			"path": "./",
+			"full": "component",
+			"type": "dir",
+			"children": [
+				{
+					"name": "comp.json",
+					"path": "component",
+					"full": "component/comp.json",
+					"type": "file"
+				},
+				{
+					"name": "Component.js",
+					"path": "component",
+					"full": "component/Component.js",
+					"type": "file"
+				},
+				{
+					"name": "data.json",
+					"path": "component",
+					"full": "component/data.json",
+					"type": "file"
+				},
+				{
+					"name": "index.html",
+					"path": "component",
+					"full": "component/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "component",
+					"full": "component/index.js",
+					"type": "file"
+				},
+				{
+					"name": "test",
+					"path": "component",
+					"full": "component/test",
+					"type": "dir",
+					"children": []
+				}
+			]
+		},
+		{
+			"name": "directory.json",
+			"path": "./",
+			"full": "directory.json",
+			"type": "file"
+		},
+		{
+			"name": "index.html",
+			"path": "./",
+			"full": "index.html",
+			"type": "file"
+		},
+		{
+			"name": "index.js",
+			"path": "./",
+			"full": "index.js",
+			"type": "file"
+		},
+		{
+			"name": "server.mjs",
+			"path": "./",
+			"full": "server.mjs",
+			"type": "file"
+		}
+	]
+}
