@@ -57,11 +57,236 @@
 					"type": "file"
 				},
 				{
+					"name": "NakedComponent.js",
+					"path": "component",
+					"full": "component/NakedComponent.js",
+					"type": "file"
+				},
+				{
 					"name": "test",
 					"path": "component",
 					"full": "component/test",
 					"type": "dir",
 					"children": []
+				}
+			]
+		},
+		{
+			"name": "component2",
+			"path": "./",
+			"full": "component2",
+			"type": "dir",
+			"children": [
+				{
+					"name": "comp.json",
+					"path": "component2",
+					"full": "component2/comp.json",
+					"type": "file"
+				},
+				{
+					"name": "index.html",
+					"path": "component2",
+					"full": "component2/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "component2",
+					"full": "component2/index.js",
+					"type": "file"
+				},
+				{
+					"name": "module2",
+					"path": "component2",
+					"full": "component2/module2",
+					"type": "dir",
+					"children": [
+						{
+							"name": "Component",
+							"path": "component2/module2",
+							"full": "component2/module2/Component",
+							"type": "dir",
+							"children": [
+								{
+									"name": "Component.js",
+									"path": "component2/module2/Component",
+									"full": "component2/module2/Component/Component.js",
+									"type": "file"
+								},
+								{
+									"name": "Dir.js",
+									"path": "component2/module2/Component",
+									"full": "component2/module2/Component/Dir.js",
+									"type": "file"
+								},
+								{
+									"name": "File.js",
+									"path": "component2/module2/Component",
+									"full": "component2/module2/Component/File.js",
+									"type": "file"
+								},
+								{
+									"name": "meta.json",
+									"path": "component2/module2/Component",
+									"full": "component2/module2/Component/meta.json",
+									"type": "file"
+								}
+							]
+						},
+						{
+							"name": "Thing",
+							"path": "component2/module2",
+							"full": "component2/module2/Thing",
+							"type": "dir",
+							"children": [
+								{
+									"name": "Thing.js",
+									"path": "component2/module2/Thing",
+									"full": "component2/module2/Thing/Thing.js",
+									"type": "file"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "old_notes.js",
+					"path": "component2",
+					"full": "component2/old_notes.js",
+					"type": "file"
+				},
+				{
+					"name": "sub",
+					"path": "component2",
+					"full": "component2/sub",
+					"type": "dir",
+					"children": [
+						{
+							"name": "comp.json",
+							"path": "component2/sub",
+							"full": "component2/sub/comp.json",
+							"type": "file"
+						},
+						{
+							"name": "index.html",
+							"path": "component2/sub",
+							"full": "component2/sub/index.html",
+							"type": "file"
+						},
+						{
+							"name": "index.js",
+							"path": "component2/sub",
+							"full": "component2/sub/index.js",
+							"type": "file"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "component3",
+			"path": "./",
+			"full": "component3",
+			"type": "dir",
+			"children": [
+				{
+					"name": "component.json",
+					"path": "component3",
+					"full": "component3/component.json",
+					"type": "file"
+				},
+				{
+					"name": "index.html",
+					"path": "component3",
+					"full": "component3/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "component3",
+					"full": "component3/index.js",
+					"type": "file"
+				},
+				{
+					"name": "thing.json",
+					"path": "component3",
+					"full": "component3/thing.json",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "dir",
+			"path": "./",
+			"full": "dir",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "dir",
+					"full": "dir/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "dir",
+					"full": "dir/index.js",
+					"type": "file"
+				},
+				{
+					"name": "test",
+					"path": "dir",
+					"full": "dir/test",
+					"type": "dir",
+					"children": []
+				},
+				{
+					"name": "test2",
+					"path": "dir",
+					"full": "dir/test2",
+					"type": "dir",
+					"children": [
+						{
+							"name": "sub",
+							"path": "dir/test2",
+							"full": "dir/test2/sub",
+							"type": "dir",
+							"children": [
+								{
+									"name": "test.ext",
+									"path": "dir/test2/sub",
+									"full": "dir/test2/sub/test.ext",
+									"type": "file"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Directory",
+			"path": "./",
+			"full": "Directory",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "Directory",
+					"full": "Directory/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "Directory",
+					"full": "Directory/index.js",
+					"type": "file"
+				},
+				{
+					"name": "test",
+					"path": "Directory",
+					"full": "Directory/test",
+					"type": "file"
 				}
 			]
 		},
@@ -84,10 +309,44 @@
 			"type": "file"
 		},
 		{
+			"name": "Note",
+			"path": "./",
+			"full": "Note",
+			"type": "dir",
+			"children": [
+				{
+					"name": "Note.js",
+					"path": "Note",
+					"full": "Note/Note.js",
+					"type": "file"
+				}
+			]
+		},
+		{
 			"name": "server.mjs",
 			"path": "./",
 			"full": "server.mjs",
 			"type": "file"
+		},
+		{
+			"name": "Thing",
+			"path": "./",
+			"full": "Thing",
+			"type": "dir",
+			"children": [
+				{
+					"name": "Thing.js",
+					"path": "Thing",
+					"full": "Thing/Thing.js",
+					"type": "file"
+				},
+				{
+					"name": "Things.json",
+					"path": "Thing",
+					"full": "Thing/Things.json",
+					"type": "file"
+				}
+			]
 		}
 	]
 }

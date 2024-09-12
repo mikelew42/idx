@@ -79,7 +79,9 @@ class Socket extends EventEmitter {
 	async message(data){
 		data = JSON.parse(data.toString());
 		data.args = data.args || [];
-		console.log(data.method + "(", ...data.args, ")");
+		console.log(data.method + "(", ...data.args, ")", data.id);
+
+		this.last_request_index = data.index;
 
 		this[data.method](...data.args);
 	}
@@ -97,25 +99,23 @@ class Socket extends EventEmitter {
 			if (err) console.error(err);
 			else console.log("File: ", file, " written successfully.");
 		});
+	}
 
-		//  /path/file.json  -> ./path/file.json
-		//  file.json -> ./file.json
-		//  ./file.json -> ./file.json
-		//  ../file.json -> ../file.json
-		// @author ChatGPT
-		function toRelativePath(filePath) {
-		  if (path.isAbsolute(filePath)) {
-		    return `.${filePath}`;
-		  } else if (!filePath.startsWith('./') && !filePath.startsWith('../')) {
-		    return `./${filePath}`;
-		  } else {
-		    return filePath;
-		  }
-		}
+	response(obj){
+		obj.index = this.last_request_index;
+		this.ws.send(JSON.stringify(obj));
 	}
 
 	ls(dir = "./") {
-		this.rpc("ls", this.server.build_dir(dir));
+		dir = toRelativePath(dir);
+		try {
+			this.response({ files: this.server.build_dir(dir) });
+		} catch (e){
+			if(e.code === "ENOENT"){
+				fs.mkdirSync(dir);
+				this.response({ files: this.server.build_dir(dir) });
+			}
+		}
 	}
 
 	cmd(cmd){
@@ -145,3 +145,18 @@ class Socket extends EventEmitter {
 }
 
 SocketServer.Socket = Socket;
+
+//  /path/file.json  -> ./path/file.json
+//  file.json -> ./file.json
+//  ./file.json -> ./file.json
+//  ../file.json -> ../file.json
+// @author ChatGPT
+function toRelativePath(filePath) {
+  if (path.isAbsolute(filePath)) {
+    return `.${filePath}`;
+  } else if (!filePath.startsWith('./') && !filePath.startsWith('../')) {
+    return `./${filePath}`;
+  } else {
+    return filePath;
+  }
+}

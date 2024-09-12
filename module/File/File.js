@@ -7,16 +7,20 @@ export default class File extends Base {
 		if (!this.name)
 			throw "Must provide file.name";
 
+		if (this.path)
+			this.path = this.path + "/";
+
 		// pass `meta: import.meta` for script-relative file
 		if (this.meta){
-			this.url = this.meta.resolve("./" + this.name);
-			this.path = new URL(this.url).pathname;
+			this.url = this.meta.resolve("./" + (this.path ?? "") + this.name);
+			this.full = new URL(this.url).pathname;
 		} else {
-			this.path = window.location.pathname + this.name;
-			this.url = window.location.href + this.name;
+			this.full = window.location.pathname + (this.path ?? "") + this.name;
+			this.url = window.location.origin + this.full;
 		}
 
 		console.log("path", this.path);
+		console.log("full", this.full);
 		console.log("url", this.url);
 
 
@@ -27,9 +31,9 @@ export default class File extends Base {
 		this.load = this.load.bind(this);
 
 		this.ready = Promise.all([
-			this.constructor.socket.ready, 
-			new Promise(res => this._ready = res)
-		]);
+				this.constructor.socket.ready,
+				new Promise(res => this._res = res) // resolved when load()
+			]).then(() => this); // for file = await new File().ready()
 
 		this.fetch();
 	}
@@ -44,7 +48,10 @@ export default class File extends Base {
 
 			} else if (response.statusText == "Not Found"){
 				// create an empty json file
-				this.stringify({});
+				this.data = {};
+				this.save();
+				// TODO: we need to this._res() to allow saving, even when the file doesn't exist
+				// for now, we just refresh, and the saving will happen on the next pass...
 
 			} else {
 				throw "Fetch response not ok: " + response.statusText;
@@ -54,13 +61,15 @@ export default class File extends Base {
 
 	load(data){
 		this.data = data;
-		this._ready();
+		console.log("file loaded");
+		this._res?.(); // very strange syntax, resolves the ready promise, if it has been created.  might not want to call this multiple times?  but the file is only loaded once...?
+			// now that _res is always defined, this ? can go, but i'll leave it here as a reference for this strange syntax
 	}
 
-	stringify(data){
-		this.data = JSON.stringify(data, null, 4);
-		this.save();
-	}
+	// stringify(data){
+	// 	this.data = JSON.stringify(data, null, 4);
+	// 	this.save();
+	// }
 
 	save(){
 		if (!this.saving)
@@ -69,7 +78,7 @@ export default class File extends Base {
 
 	send(){
 		// console.log("sending", this.props);
-		this.constructor.socket.rpc("write", this.path, this.data);
+		this.constructor.socket.rpc("write", this.full, JSON.stringify(this.data, null, 4));
 		this.saving = false;
 	}
 }

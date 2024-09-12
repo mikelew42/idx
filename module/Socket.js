@@ -12,6 +12,8 @@ export default class Socket extends EventEmitter {
 		this.ready = new Promise((res, rej) => {
 			this._ready = res;
 		});
+
+		this.requests = [];
 	}
 	open(){
 		console.log("%cSocket connected.", "color: green; font-weight: bold;");
@@ -21,12 +23,17 @@ export default class Socket extends EventEmitter {
 	// message recieved handler
 	message(res){
 		// debugger;
-		console.log(res);
+		// console.log(res);
 		const data = JSON.parse(res.data);
-		data.args = data.args || [];
-		console.log(data.method + "(", ...data.args, ")");
 
-		this[data.method](...data.args);
+		// does the index exist
+		if (data?.index in this.requests){
+			this.requests[data.index](data);
+		} else {
+			data.args = data.args || [];
+			console.log(data.method + "(", ...data.args, ")");
+			this[data.method](...data.args);
+		}
 	}
 	reload(){
 		window.location.reload();
@@ -40,13 +47,29 @@ export default class Socket extends EventEmitter {
 		});
 	}
 
+	async request(obj){
+		this.response = new Promise(resolve => {
+			obj.index = this.requests.push(resolve) - 1;
+		});
+
+		await this.ready;
+		this.ws.send(JSON.stringify(obj));
+
+
+		return this.response;
+	}
+
 	rpc(method, ...args){
 		this.send({ method, args })
 	}
-	ls(data){
-		new FSView({ data })
 
+	ls(dir){
+		return this.request({ method: "ls", args: [ dir ] });
 	}
+
+	// ls_response(data){
+	// 	new FSView({ data })
+	// }
 
 	cmd(res){
 		console.log("cmd response:", res);
@@ -57,3 +80,14 @@ export default class Socket extends EventEmitter {
 	}
 }
 
+/*
+
+await socket.request() -> fulfills with response
+
+request(){
+	this.send({ request, id })
+
+	this.response = new Promise()
+}
+
+*/
