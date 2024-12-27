@@ -39,6 +39,7 @@ export default class App extends Base {
 	}
 
 	initialize_dev_ready(){
+		// this.socket.ready.then(() => console.log("socket.ready"));
 		this.ready = Promise.all([this.socket.ready, this.window_loaded()]).then(() => this);
 	}
 

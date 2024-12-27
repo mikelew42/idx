@@ -77,13 +77,6 @@
 			"type": "file"
 		},
 		{
-			"name": "test",
-			"path": "./",
-			"full": "test",
-			"type": "dir",
-			"children": []
-		},
-		{
 			"name": "three-gyro",
 			"path": "./",
 			"full": "three-gyro",

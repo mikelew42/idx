@@ -7,6 +7,8 @@ export default {
 	directorize: true,
 	initialize(){
 		this.initialize_server();
+
+		// this is bad, won't work unless I set this up similarly...
 		this.express_app.use("/three.js", this.express.static(this.dirname + "/../../three.js/"));
 		this.listen();
 	},
