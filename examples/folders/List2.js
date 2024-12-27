@@ -1,4 +1,4 @@
-import { App, el, div, View, h1, h2, h3, p, is, Base, test, Test, EventEmitter } from "/module/App.js";
+import { App, el, div, View, h1, h2, h3, p, is, Base, test, Test, Events } from "/module/App.js";
 
 View.stylesheet("List.css");
 
@@ -81,7 +81,7 @@ console.log(`The closest number to ${inputNumber} is `, closest);
 
 
 class Item {}
-class List extends EventEmitter {
+class List extends Events {
 	instantiate(...args){
 		this.items = [];
 

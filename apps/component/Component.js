@@ -1,8 +1,8 @@
-import Base from "/module/Base.js";
-// import EventEmitter from "./EventEmitter.js";
+import Base from "/module/Base/Base.js";
+// import Events from "./Events.js";
 // import { el, div, View, h1, h2, h3, p, is, icon } from "./View.js";
 // import Test, { test } from "./Test.js";
-import Socket from "/module/Socket.js";
+import Socket from "/module/Socket/Socket.js";
 
 export default class Component extends Base {
 	initialize(){

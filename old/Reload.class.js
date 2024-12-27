@@ -1,4 +1,4 @@
-import EventEmitter from "./module/EventEmitter.class.js";
+import Events from "./module/Events.class.js";
 
 import chokidar from "chokidar";
 

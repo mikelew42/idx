@@ -1,14 +1,14 @@
-import Base from "/module/Base.js";
-import Socket from "/module/Socket.js";
-import is from "/module/is.js";
+import Base from "/module/Base/Base.js";
+import Socket from "/module/socket.js";
+import is from "/module/lib/is.js";
 import File from "/module/File/file.js";
 
 
 export default class Dir extends Base {
 
 	initialize(){
-		if (!this.name)
-			throw "Must provide dir.name";
+		// if (!this.name)
+		// 	throw "Must provide dir.name";
 
 		if (this.path)
 			this.path = this.path + "/";
@@ -22,13 +22,13 @@ export default class Dir extends Base {
 			this.url = window.location.origin + this.full;
 		}
 
-		console.log("path", this.path);
-		console.log("full", this.full);
-		console.log("url", this.url);
+		// console.log("path", this.path);
+		// console.log("full", this.full);
+		// console.log("url", this.url);
 
 
 		if (!this.constructor.socket)
-			this.constructor.socket = new Socket();
+			this.constructor.socket = socket;
 
 		// this.send = this.send.bind(this);
 		this.load = this.load.bind(this);
@@ -42,10 +42,10 @@ export default class Dir extends Base {
 	}
 
 	async load(){
-		console.log("loading");
+		console.log("loading dir", this.full);
 		const data = await this.constructor.socket.ls(this.full);
 		this._res()
-		console.log("data", data);
+		// console.log("dir data", this.full, data);
 	}
 
 	file(name){

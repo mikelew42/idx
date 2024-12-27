@@ -1,0 +1,8 @@
+.vis { position: absolute; }
+.panels { display: flex; padding: 1em; gap: 10px; }
+.panels-four .panel { flex: 0 0 25%; }
+.panel { flex: 1 1 0; padding: 1em; background: white; min-width: 300px; }
+.panel.left { min-width: 350px; }
+.draggable { background: black; flex: 0 0 50px; cursor: ew-resize; position:relative; }
+.draggable .vis { height: 5px; background: green; left: 0px; right: -15px; }
+body.ew-resize { cursor: ew-resize; user-select: none;}

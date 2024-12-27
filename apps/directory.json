@@ -1,26 +1,6 @@
 {
 	"files": [
 		{
-			"name": "app1",
-			"path": "./",
-			"full": "app1",
-			"type": "dir",
-			"children": [
-				{
-					"name": "index.html",
-					"path": "app1",
-					"full": "app1/index.html",
-					"type": "file"
-				},
-				{
-					"name": "index.js",
-					"path": "app1",
-					"full": "app1/index.js",
-					"type": "file"
-				}
-			]
-		},
-		{
 			"name": "component",
 			"path": "./",
 			"full": "component",
@@ -60,6 +40,12 @@
 					"name": "NakedComponent.js",
 					"path": "component",
 					"full": "component/NakedComponent.js",
+					"type": "file"
+				},
+				{
+					"name": "props.json",
+					"path": "component",
+					"full": "component/props.json",
 					"type": "file"
 				},
 				{
@@ -265,35 +251,15 @@
 			]
 		},
 		{
-			"name": "Directory",
-			"path": "./",
-			"full": "Directory",
-			"type": "dir",
-			"children": [
-				{
-					"name": "index.html",
-					"path": "Directory",
-					"full": "Directory/index.html",
-					"type": "file"
-				},
-				{
-					"name": "index.js",
-					"path": "Directory",
-					"full": "Directory/index.js",
-					"type": "file"
-				},
-				{
-					"name": "test",
-					"path": "Directory",
-					"full": "Directory/test",
-					"type": "file"
-				}
-			]
-		},
-		{
 			"name": "directory.json",
 			"path": "./",
 			"full": "directory.json",
+			"type": "file"
+		},
+		{
+			"name": "dynamic_module_test.js",
+			"path": "./",
+			"full": "dynamic_module_test.js",
 			"type": "file"
 		},
 		{
@@ -323,6 +289,44 @@
 			]
 		},
 		{
+			"name": "Panel",
+			"path": "./",
+			"full": "Panel",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "Panel",
+					"full": "Panel/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "Panel",
+					"full": "Panel/index.js",
+					"type": "file"
+				},
+				{
+					"name": "panel.css",
+					"path": "Panel",
+					"full": "Panel/panel.css",
+					"type": "file"
+				},
+				{
+					"name": "Panel.js",
+					"path": "Panel",
+					"full": "Panel/Panel.js",
+					"type": "file"
+				},
+				{
+					"name": "panel.json",
+					"path": "Panel",
+					"full": "Panel/panel.json",
+					"type": "file"
+				}
+			]
+		},
+		{
 			"name": "server.mjs",
 			"path": "./",
 			"full": "server.mjs",
@@ -335,6 +339,52 @@
 			"type": "dir",
 			"children": [
 				{
+					"name": "instances",
+					"path": "Thing",
+					"full": "Thing/instances",
+					"type": "dir",
+					"children": [
+						{
+							"name": "thing0",
+							"path": "Thing/instances",
+							"full": "Thing/instances/thing0",
+							"type": "dir",
+							"children": [
+								{
+									"name": "thing0.json",
+									"path": "Thing/instances/thing0",
+									"full": "Thing/instances/thing0/thing0.json",
+									"type": "file"
+								}
+							]
+						},
+						{
+							"name": "thing0.json",
+							"path": "Thing/instances",
+							"full": "Thing/instances/thing0.json",
+							"type": "file"
+						},
+						{
+							"name": "thing1.json",
+							"path": "Thing/instances",
+							"full": "Thing/instances/thing1.json",
+							"type": "file"
+						},
+						{
+							"name": "thing2.json",
+							"path": "Thing/instances",
+							"full": "Thing/instances/thing2.json",
+							"type": "file"
+						},
+						{
+							"name": "thing3.json",
+							"path": "Thing/instances",
+							"full": "Thing/instances/thing3.json",
+							"type": "file"
+						}
+					]
+				},
+				{
 					"name": "Thing.js",
 					"path": "Thing",
 					"full": "Thing/Thing.js",
@@ -344,6 +394,26 @@
 					"name": "Things.json",
 					"path": "Thing",
 					"full": "Thing/Things.json",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "things",
+			"path": "./",
+			"full": "things",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "things",
+					"full": "things/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "things",
+					"full": "things/index.js",
 					"type": "file"
 				}
 			]

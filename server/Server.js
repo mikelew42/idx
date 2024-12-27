@@ -1,4 +1,4 @@
-import Base from "../module/Base.js";
+import Base from "../module/Base/Base.js";
 
 import express from "express";
 import http from "http";
@@ -50,7 +50,9 @@ export default class Server extends Base {
 	}
 
 	initialize_server(){
-		this.webroot = process.cwd();
+		this.webroot = this.webroot || process.cwd();
+		console.log(this.webroot);
+		console.log(process.cwd())
 		this.dirname = path.dirname(url.fileURLToPath(import.meta.url));
 		this.initialize_express_app();
 		this.initialize_http_server();
@@ -82,7 +84,7 @@ export default class Server extends Base {
 	}
 
 	listen(){
-		this.http_server.listen(80, () => {
+		this.http_server.listen(80, '0.0.0.0', () => {
 			console.log("Listening (" + this.webroot + ")");
 		});
 	}

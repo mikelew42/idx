@@ -1,4 +1,4 @@
-import { App, el, div, View, h1, h2, h3, p, is, icon, Base, EventEmitter } from "/module/App.js";
+import { App, el, div, View, h1, h2, h3, p, is, icon, Base, Events } from "/module/App.js";
 
 const app = window.app = await new App().ready;
 

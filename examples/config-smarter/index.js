@@ -1,4 +1,4 @@
-import { App, el, div, View, h1, h2, h3, p, is, Base, Smart, EventEmitter } from "/module/SmartApp.js";
+import { App, el, div, View, h1, h2, h3, p, is, Base, Smart, Events } from "/module/SmartApp.js";
 
 View.stylesheet("./styles.css");
 
@@ -111,7 +111,7 @@ class Smarter extends Smart {
 		})
 	}
 }
-class Property extends EventEmitter {
+class Property extends Events {
 
 	// value;
 

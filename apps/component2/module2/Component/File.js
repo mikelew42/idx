@@ -1,5 +1,7 @@
 import Base from "/module/Base.js";
-import Socket from "/module/Socket.js";
+import socket from "/module/socket.js";
+
+File.socket = socket;
 
 export default class File extends Base {
 

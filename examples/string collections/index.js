@@ -1,9 +1,9 @@
-import { App, el, div, View, h1, h2, h3, p, is, Base, EventEmitter } from "/module/App.js";
+import { App, el, div, View, h1, h2, h3, p, is, Base, Events } from "/module/App.js";
 
 const app = window.app = await new App().ready;
 
 
-class Item extends EventEmitter {
+class Item extends Events {
 	value(value){
 		if (is.def(value)){
 			this.value = value;
@@ -16,7 +16,7 @@ class Item extends EventEmitter {
 }
 
 
-class Collection extends EventEmitter {
+class Collection extends Events {
 
 	instantiate(...args){
 		this.items = [];

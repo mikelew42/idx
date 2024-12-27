@@ -1,4 +1,4 @@
-import EventEmitter from "/module/EventEmitter.js";
+import Events from "/module/Events.js";
 import { el, div, View, h1, h2, h3, p, is, Base } from "/module/View.js";
 import Smart from "/module/Smart.js";
 

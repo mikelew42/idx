@@ -1,15 +1,48 @@
 import Component from "/module/Component/Component.js";
+import Dir from "/module/Dir/Dir.js";
 
 export default class Thing extends Component {
+	load_file(){
+		// this.file = this.constructor.dir.instances.file(this.name + ".json");
+		this.dir = this.constructor.dir.instances.dir(this.name);
+		this.file = this.dir.file(this.name + ".json");
+	}
+
 	static meta(){
 		return import.meta;
+	}
+
+	static config(){
+		this.instances = [];
+
+		// this.dir = new Dir({
+
+		// });
+		console.log(import.meta)
+
+		this.dir = new Dir({
+			name: "",
+			meta: import.meta
+		});
+
+		this.dir.dir("instances");
+
+		this.file = {
+			name: this.name + "s.json",
+			meta: import.meta
+		};
+	}
+
+	static new(instance){
+		instance.name = instance.name + (this.instances.push(instance) - 1);
+		// this.emit("new", instance);
 	}
 }
 
 await Thing.instantiate();
 
 Thing.set({
-	meta: "props"
+	metar: "props"
 })
 
 /*

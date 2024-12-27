@@ -1,0 +1,173 @@
+{
+	"files": [
+		{
+			"name": "ammo",
+			"path": "./",
+			"full": "ammo",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "ammo",
+					"full": "ammo/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "ammo",
+					"full": "ammo/index.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "assets",
+			"path": "./",
+			"full": "assets",
+			"type": "dir",
+			"children": [
+				{
+					"name": "spaceship.glb",
+					"path": "assets",
+					"full": "assets/spaceship.glb",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "cert.pem",
+			"path": "./",
+			"full": "cert.pem",
+			"type": "file"
+		},
+		{
+			"name": "directory.json",
+			"path": "./",
+			"full": "directory.json",
+			"type": "file"
+		},
+		{
+			"name": "index.html",
+			"path": "./",
+			"full": "index.html",
+			"type": "file"
+		},
+		{
+			"name": "index.js",
+			"path": "./",
+			"full": "index.js",
+			"type": "file"
+		},
+		{
+			"name": "key.pem",
+			"path": "./",
+			"full": "key.pem",
+			"type": "file"
+		},
+		{
+			"name": "pinch_pan_controller.js",
+			"path": "./",
+			"full": "pinch_pan_controller.js",
+			"type": "file"
+		},
+		{
+			"name": "server.mjs",
+			"path": "./",
+			"full": "server.mjs",
+			"type": "file"
+		},
+		{
+			"name": "test",
+			"path": "./",
+			"full": "test",
+			"type": "dir",
+			"children": []
+		},
+		{
+			"name": "three-gyro",
+			"path": "./",
+			"full": "three-gyro",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "three-gyro",
+					"full": "three-gyro/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "three-gyro",
+					"full": "three-gyro/index.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "three1",
+			"path": "./",
+			"full": "three1",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "three1",
+					"full": "three1/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "three1",
+					"full": "three1/index.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "three2",
+			"path": "./",
+			"full": "three2",
+			"type": "dir",
+			"children": [
+				{
+					"name": "Canvas.js",
+					"path": "three2",
+					"full": "three2/Canvas.js",
+					"type": "file"
+				},
+				{
+					"name": "index.html",
+					"path": "three2",
+					"full": "three2/index.html",
+					"type": "file"
+				},
+				{
+					"name": "Scene.js",
+					"path": "three2",
+					"full": "three2/Scene.js",
+					"type": "file"
+				}
+			]
+		},
+		{
+			"name": "tpl",
+			"path": "./",
+			"full": "tpl",
+			"type": "dir",
+			"children": [
+				{
+					"name": "index.html",
+					"path": "tpl",
+					"full": "tpl/index.html",
+					"type": "file"
+				},
+				{
+					"name": "index.js",
+					"path": "tpl",
+					"full": "tpl/index.js",
+					"type": "file"
+				}
+			]
+		}
+	]
+}

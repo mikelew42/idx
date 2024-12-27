@@ -1,4 +1,4 @@
-import EventEmitter from "/module/EventEmitter.js";
+import Events from "/module/Events.js";
 import { el, div, View, h1, h2, h3, p, is, Base } from "/module/View.js";
 
 
@@ -15,7 +15,7 @@ Every time we extend a class, we have to initialize it with the saver, one time 
 This could be a static init function that checks if there's any data yet, and creates it that once.
 
 */
-export default class Thing extends EventEmitter {
+export default class Thing extends Events {
 
 	/*
 

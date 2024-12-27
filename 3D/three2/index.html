@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="importmap">
+	{
+	  "imports": {
+	    "three": "/module/lib/three.js"
+	  }
+	}
+	</script>
+	<style>
+		body { overscroll-behavior: none; touch-action:none; margin: 0; padding: 0; }
+		body, html, canvas { height: 100%; width: 100%; }
+	</style>
+</head>
+<body>
+	<script type="module">
+		import { App, el, div, View, h1, h2, h3, p, is, Base, icon } from "/module/App/App.js";
+		import * as THREE from "/module/lib/three.js";
+		import Scene from "./Scene.js";
+
+		new Scene({
+			initialize(){
+				const geometry = new THREE.BoxGeometry(1, 1, 1);
+				const material = new THREE.MeshStandardMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
+				const material2 = new THREE.MeshStandardMaterial({ color: 0x444444 });
+				const cube = new THREE.Mesh(geometry, material2);
+				this.add(cube);
+
+				this.initialize_controls();
+				this.render();
+				// this.renderer.setAnimationLoop(this.update);
+			}
+		});
+	</script>
+</body>
+</html>

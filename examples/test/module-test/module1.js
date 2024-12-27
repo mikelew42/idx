@@ -1,6 +1,6 @@
-import EventEmitter from "/module/EventEmitter.js";
+import Events from "/module/Events.js";
 
-export default class Module1 extends EventEmitter {
+export default class Module1 extends Events {
 
 }
 

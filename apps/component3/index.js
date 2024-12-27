@@ -16,10 +16,12 @@ window.comp = new Component({
 	}
 });
 
-console.log("before thing.ready");
-window.thing = await new Thing().ready;
-console.log("after thing.ready");
+console.log("before new Thing()");
+window.thing = new Thing();
+console.log("after new Thing()");
 
+await thing.ready;
+console.log("thing.ready");
 thing.set({
 	one: true,
 	three: "four"

@@ -1,4 +1,4 @@
-import EventEmitter from "../module/EventEmitter.js";
+import Events from "../module/Events/Events.js";
 
 import fs from "fs";
 import path from "path";
@@ -13,7 +13,12 @@ import chokidar from "chokidar";
 // could separate Reload/Watcher from Socket..
 
 
-export default class SocketServer extends EventEmitter {
+/*
+I don't believe this properly closes the sockets...
+Also, if we have a handle on the server, how do we emit messages?
+Do we have to loop through server.socket_server.sockets?
+*/
+export default class SocketServer extends Events {
 	count = 0;
 
 	initialize(){
@@ -64,7 +69,7 @@ export default class SocketServer extends EventEmitter {
 	}
 }
 
-class Socket extends EventEmitter {
+class Socket extends Events {
 	initialize(){
 		this.ws.on("message", this.message.bind(this));
 		this.ws.on("close", () => {

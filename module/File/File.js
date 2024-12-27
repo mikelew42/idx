@@ -1,5 +1,5 @@
-import Base from "/module/Base.js";
-import Socket from "/module/Socket.js";
+import Base from "/module/Base/Base.js";
+import Socket from "/module/socket.js";
 
 export default class File extends Base {
 
@@ -19,13 +19,14 @@ export default class File extends Base {
 			this.url = window.location.origin + this.full;
 		}
 
-		console.log("path", this.path);
-		console.log("full", this.full);
-		console.log("url", this.url);
+		// if (this.path)
+		// 	console.log("path", this.path);
+		// console.log("full", this.full);
+		// console.log("url", this.url);
 
 
 		if (!this.constructor.socket)
-			this.constructor.socket = new Socket();
+			this.constructor.socket = socket;
 
 		this.send = this.send.bind(this);
 		this.load = this.load.bind(this);
@@ -39,7 +40,7 @@ export default class File extends Base {
 	}
 
 	fetch(){
-
+		console.log("fetching file", this.url);
 		fetch(this.url).then(response => {
 			// console.log("response", response);
 
@@ -61,7 +62,7 @@ export default class File extends Base {
 
 	load(data){
 		this.data = data;
-		console.log("file loaded");
+		console.log("file loaded", this.full);
 		this._res?.(); // very strange syntax, resolves the ready promise, if it has been created.  might not want to call this multiple times?  but the file is only loaded once...?
 			// now that _res is always defined, this ? can go, but i'll leave it here as a reference for this strange syntax
 	}
@@ -77,7 +78,7 @@ export default class File extends Base {
 	}
 
 	send(){
-		// console.log("sending", this.props);
+		console.log("writing file", this.full);
 		this.constructor.socket.rpc("write", this.full, JSON.stringify(this.data, null, 4));
 		this.saving = false;
 	}

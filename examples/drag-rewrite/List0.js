@@ -1,6 +1,6 @@
-import { App, el, div, View, h1, h2, h3, p, is, Base, test, Test, EventEmitter } from "/module/App.js";
+import { App, el, div, View, h1, h2, h3, p, is, Base, test, Test, Events } from "/module/App.js";
 
-export default class List extends EventEmitter {
+export default class List extends Events {
 	instantiate(...args){
 		this.lists = [];
 
